@@ -1,0 +1,8 @@
+#!/bin/sh
+# xmllint check for Google LEC XML
+
+for file in out/frommers*xml; do
+  echo " ++ Linting $file"
+  xmllint --schema http://local.google.com/local_feed.xsd --noout $file
+done
+

@@ -1,0 +1,9 @@
+#!/bin/sh
+# shorthand script for rsyncing local XML files to staging server
+
+echo " ++ Uploading frommers local XML feeds to staging server..."
+
+rsync --progress --rsh="ssh -p3434" -avzh out/frommers-*.xml build@staging.whatsonwhen.com:/var/www/html/local/
+
+echo " ++ Done"
+exit 0
